@@ -18,23 +18,25 @@ def change():
 def main_for_T(t):
     correct_t(t)
     y = t * 60
-    print(str(t) + "minutes = " + str(y) + "seconds")
+    answer_t = str(str(t) + "minutes = " + str(y) + "seconds")
+    return answer_t
 
 def main_for_S(s):
     correct_s(s)
     z = s * 180/3.14
-    print(str(s) + "rad = " + str(z) + "dig")
+    answer_s = str(str(s) + "rad = " + str(z) + "dig")
+    return answer_s
 
 def correct_s(s):
-    if s == 1:
-        return s
+    if s.isdigit():
+        return main_for_S(s)
     else:
         s = input("Change your enter: ")
         correct_s(s)
 
 def correct_t(t):
-    if t == 1:
-        return t
+    if t.isdigit():
+        return main_for_T(t)
     else:
         t = input("Change your enter: ")
         correct_t(t)
