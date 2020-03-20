@@ -1,1 +1,45 @@
-print("Hello world")
+"""
+Скласти програму переведення радіанної міри кута в градуси, хвилини і секунди.
+Compile a program to translate the radial angle measure into degrees, minutes and seconds.
+"""
+
+
+def change():
+    one = input("Enter what you want to change Minutes to Seconds enter (Time) if Angels Enter (Angel): ")
+    if one == "Time":
+        t = input("Enter Minutes: ")
+        return main_for_T(t)
+    elif one == "Angel":
+        s = input("Enter Number: ")
+        return main_for_S(s)
+    else:
+        return change()
+
+def main_for_T(t):
+    correct_t(t)
+    y = t * 60
+    print(str(t) + "minutes = " + str(y) + "seconds")
+
+def main_for_S(s):
+    correct_s(s)
+    z = s * 180/3.14
+    print(str(s) + "rad = " + str(z) + "dig")
+
+def correct_s(s):
+    if s == 1:
+        return s
+    else:
+        s = input("Change your enter: ")
+        correct_s(s)
+
+def correct_t(t):
+    if t == 1:
+        return t
+    else:
+        t = input("Change your enter: ")
+        correct_t(t)
+
+def main():
+     return change()
+
+main()
