@@ -5,7 +5,7 @@ Compile a program to translate the radial angle measure into degrees, minutes an
 
 
 def change():
-    one = switch_to_change(input("enter number: "))
+    one = switch_to_change(input("Enter 1 to get Minutes to seconds,\n2 to get Radial to degrees\nand 0 to Finish: "))
     if one == "Minutes to seconds":
         t = input("Enter Minutes: ")
         return correct_t(t)
@@ -13,7 +13,7 @@ def change():
         s = input("Enter Number: ")
         return correct_s(s)
     elif one == "Finish":
-        print("Process finished with exit code 0")
+        print("The End")
     else:
         return change()
 
@@ -55,7 +55,7 @@ def switch_to_change(argument):
     one = switcher.get(argument)
     return one
 
-main()
-
-
-
+non = 1
+while non != 0:
+    main()
+    non = int(input("Enter 1 to continue: "))
