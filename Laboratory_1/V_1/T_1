@@ -5,30 +5,31 @@ Compile a program to translate the radial angle measure into degrees, minutes an
 
 
 def change():
-    one = input("Enter what you want to change Minutes to Seconds enter (Time) if Angels Enter (Angel): ")
-    if one == "Time":
+    one = switch_to_change(input("enter number: "))
+    if one == "Minutes to seconds":
         t = input("Enter Minutes: ")
-        return main_for_T(t)
-    elif one == "Angel":
+        return correct_t(t)
+    elif one == "Radial to degrees":
         s = input("Enter Number: ")
-        return main_for_S(s)
+        return correct_s(s)
+    elif one == "Finish":
+        print("Process finished with exit code 0")
     else:
         return change()
 
 def main_for_T(t):
-    correct_t(t)
     y = t * 60
-    answer_t = str(str(t) + "minutes = " + str(y) + "seconds")
-    return answer_t
+    answer_t = str(str(t) + " minutes = " + str(y) + " seconds")
+    return print(answer_t)
 
 def main_for_S(s):
-    correct_s(s)
     z = s * 180/3.14
-    answer_s = str(str(s) + "rad = " + str(z) + "dig")
-    return answer_s
+    answer_s = str(str(s) + " rad = " + str(z) + " deg")
+    return print(answer_s)
 
 def correct_s(s):
     if s.isdigit():
+        s = int(s)
         return main_for_S(s)
     else:
         s = input("Change your enter: ")
@@ -36,6 +37,7 @@ def correct_s(s):
 
 def correct_t(t):
     if t.isdigit():
+        t = int(t)
         return main_for_T(t)
     else:
         t = input("Change your enter: ")
@@ -44,4 +46,16 @@ def correct_t(t):
 def main():
      return change()
 
+def switch_to_change(argument):
+    switcher = {
+        "0": "Finish",
+        "1": "Minutes to seconds",
+        "2": "Radial to degrees"
+    }
+    one = switcher.get(argument)
+    return one
+
 main()
+
+
+
