@@ -56,6 +56,6 @@ def switch_to_change(argument):
     return one
 
 non = 1
-while non != 0:
+while non == 1:
     main()
     non = int(input("Enter 1 to continue: "))
