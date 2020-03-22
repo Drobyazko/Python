@@ -20,7 +20,7 @@ def main():
     a = int(in_put_for_a())
     b = int(in_put_for_b())
     hyp = round(sqrt(a * a + b * b),10)
-    perimeter = round(gip + a + b,10)
+    perimeter = round(hyp + a + b,10)
     area = round((a * b)/2,10)
     return print("Гипотенуза "+str(hyp)+"\n"+"Периметр "+str(perimeter)+"\n"+"Площадь "+str(area))
 
