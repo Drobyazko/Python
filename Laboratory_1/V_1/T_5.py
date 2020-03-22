@@ -29,6 +29,6 @@ def main():
     return print("Вартість однієї покупки з 300 г цукерок і 400 г печива: " + str(answer_1) + "\n" + "Вартість трьох покупок, кожна з 2 кг печива і 1 кг 800 г цукерок: " + str(answer_2) + "\n")
 
 non = 1
-while non != 0:
+while non == 1:
     main()
     non = int(input("Enter 1 to continue: "))
