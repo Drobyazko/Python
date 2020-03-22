@@ -5,32 +5,30 @@ The user enters three numbers. Increase the first number twice, reduce the secon
 
 def in_put_for_a():
     a = input("Enter your a.\na is a number: ")
-    correct(a)
-    return a
+    if a.isdigit():
+        return a
+    else: return in_put_for_a()
 
 def in_put_for_b():
     b = input("Enter your b.\na is b number: ")
-    correct(b)
-    return b
+    if b.isdigit():
+        return b
+    else: return in_put_for_b()
 
 def in_put_for_c():
     c = input("Enter your c.\na is c number: ")
-    correct(c)
-    return c
-
-def correct(x):
-    if x.isdigit():
-        return x
-    else: return in_put_for_a()
+    if c.isdigit():
+        return c
+    else: return in_put_for_c()
 
 def main():
     a = int(in_put_for_a())
     b = int(in_put_for_b())
     c = int(in_put_for_c())
     answer = a*2 + b - 3 + c*c
-    return print(answer)
+    return print("answer " + str(answer))
 
 non = 1
-while non != 0:
+while non == 1:
     main()
     non = int(input("Enter 1 to continue: "))
