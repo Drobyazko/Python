@@ -5,22 +5,21 @@ The user enters prices of 1 kg of candy and 1 kg of cookies. Find the cost of: a
 
 def in_put_for_a():
     a = input("Enter price of 1 kg of candy.\na is a number: ")
-    correct(a)
-    return a
+    if a.isdigit():
+        return a
+    else:
+        print("Mistake")
+        return in_put_for_a()
 # a = price of 1 kg of candy
 
 def in_put_for_b():
     b = input("Enter price of 1 kg of cookies.\na is b number: ")
-    correct(b)
-    return b
-# b = price of 1 kg of cookies
-
-def correct(x):
-    if x.isdigit():
-        return x
+    if b.isdigit():
+        return b
     else:
         print("Mistake")
-        return in_put_for_a()
+        return in_put_for_b()
+# b = price of 1 kg of cookies
 
 def main():
     a = int(in_put_for_a())
