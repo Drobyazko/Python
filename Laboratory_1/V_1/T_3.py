@@ -6,18 +6,15 @@ from math import sqrt
 
 def in_put_for_a():
     a = input("Enter your a.\na is a number: ")
-    correct(a)
-    return a
+    if a.isdigit():
+        return a
+    else: return in_put_for_a()
 
 def in_put_for_b():
     b = input("Enter your b.\na is b number: ")
-    correct(b)
-    return b
-
-def correct(x):
-    if x.isdigit():
-        return x
-    else: return in_put_for_a()
+    if b.isdigit():
+        return b
+    else: return in_put_for_b()
 
 def main():
     a = int(in_put_for_a())
@@ -28,6 +25,6 @@ def main():
     return print("Гипотенуза "+str(hyp)+"\n"+"Периметр "+str(perimeter)+"\n"+"Площадь "+str(area))
 
 non = 1
-while non != 0:
+while non == 1:
     main()
     non = int(input("Enter 1 to continue: "))
